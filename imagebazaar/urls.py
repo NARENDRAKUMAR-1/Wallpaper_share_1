@@ -18,10 +18,11 @@ from django.urls import path,include
 
 from django.conf import settings
 from django.conf.urls.static import static
+# the above 2 are for the media wala part
 
 from registerapp import views as regview
 
-from .views import *
+from .views import * # required otherwise nothing will work as business logic itself resides in the views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,3 +37,6 @@ urlpatterns = [
     path('',include('django.contrib.auth.urls')),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+#  we setup 2 things in settings,  MEDIA_URl and MEDIA_ROOT,  
+# specify those here

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'imageshare',
     'registerapp',
+    
     'crispy_forms',
 ]
 
@@ -58,7 +59,10 @@ ROOT_URLCONF = 'imagebazaar.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # full path or relative name only
+        #  html content will be delivered from this folder to the views 
+        #  add the templates folder here
+        #  this BASE_DIR is project ka main folder it's set in this variable 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,9 +126,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL='/media/'
 
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_URL='/media/'  # this is where our images will go after uplaods
+
+MEDIA_ROOT=os.path.join(BASE_DIR,'media') 
+#  here we need to give the full path of the media folder 
+# so that when we upload new photos that gets stored at this particular location
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
 LOGIN_REDIRECT_URL="/home"

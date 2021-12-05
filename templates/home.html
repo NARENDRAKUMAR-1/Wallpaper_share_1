@@ -13,7 +13,7 @@
     <style>
 
         .bg{
-            background: #c8e6c9! important;
+            background: #665ed6! important;
         }
     </style>
 
@@ -23,6 +23,7 @@
 
     
     {% include 'navbar.html' %}
+    <!-- this is trick it just includes all the content of the navabar html file in our this html doc without any issue -->
     <br>
     <div class="container">
 
@@ -37,7 +38,9 @@
                 </a>
 
                 {% for c in cats %}
+                <!-- iterate and display -->
                 <a href="/category/{{c.pk}}" class="list-group-item list-group-item-action">{{c.title}}</a>
+                <!-- making the photo full, done above -->
 
                 {% endfor %}
                 
@@ -57,12 +60,19 @@
                 <div class="col-md-12">
                     <!-- use cards here -->
 
+                    {% if user.is_authenticated %}
+                      <h1>Logout from here <a href="/logout">Logout</a></h1>
+                      {% endif %}
+
                     <div class="card-columns">
 
                       {% if user.is_authenticated %}
 
 
-                        {% for i in images %}
+                        {% for i in images %} 
+                        <!-- images is coming from the views,, from the dictionary -->
+
+                        <!--  the i is an object with all the props -->
                         <div class="card" >
                             <img src="/media/{{i.image}}" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -76,7 +86,7 @@
                         {% endfor %}
 
                       {% else %}
-                      <p> <a href="/login"> <h2>  Please Login First. </h2> </a> </p>
+                      <h1> <a href="/login"> <h2>  Please Login First. </h2> </a> </h1>
 
                       {% endif %}
 
@@ -136,6 +146,8 @@
 
             $("#image-show").attr('src',`/media/${imageUrl}`)
             // back quotes
+
+            // this all is to show full image when we click the view button
         }
     </script>
 

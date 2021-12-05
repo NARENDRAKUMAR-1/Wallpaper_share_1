@@ -1,0 +1,4 @@
+crispy form have been used in this proj install them firsthans
+
+user : narendra
+pass : NK@12345
