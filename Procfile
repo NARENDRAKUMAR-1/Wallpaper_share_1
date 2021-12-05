@@ -1,3 +1,3 @@
-web: gunicorn imagebazaar.wsgi --log-file-
+web: gunicorn imagebazaar.wsgi
 
 
