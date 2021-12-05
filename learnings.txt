@@ -2,3 +2,7 @@ crispy form have been used in this proj install them firsthans
 
 user : narendra
 pass : NK@12345
+
+
+heroku 
+\https://stackoverflow.com/questions/36665889/collectstatic-error-while-deploying-django-app-to-heroku
