@@ -13,3 +13,16 @@ addd Procfile for heroku
 // if getting ProgrammingError at / relation "..." does not exist on heroku use
 
 https://stackoverflow.com/questions/48083216/django-on-heroku-programmingerror-at-relation-does-not-exist
+
+
+// local sqlite db vs heroku postgresql db
+https://stackoverflow.com/questions/63408420/sqlite-database-not-connected-in-django-heroku
+
+
+// force deploying with the sqlite as db on heroku  
+
+
+
+//resolving the UTF error while loaddata to postgresql
+use UTF-16
+https://www.youtube.com/watch?v=GkKHCL3Ngyk
