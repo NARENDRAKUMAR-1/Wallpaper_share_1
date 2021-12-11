@@ -43,5 +43,8 @@ class Image(models.Model):
 
     def __str__(self):  # special magic methods
         return self.title
+        
+
+    
 
 
