@@ -8,3 +8,8 @@ heroku
 \https://stackoverflow.com/questions/36665889/collectstatic-error-while-deploying-django-app-to-heroku
 
 addd Procfile for heroku
+
+
+// if getting ProgrammingError at / relation "..." does not exist on heroku use
+
+https://stackoverflow.com/questions/48083216/django-on-heroku-programmingerror-at-relation-does-not-exist
