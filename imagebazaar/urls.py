@@ -24,6 +24,10 @@ from registerapp import views as regview
 
 from .views import * # required otherwise nothing will work as business logic itself resides in the views
 
+# / to server media files in production
+from django.urls import re_path
+from django.views.static import serve
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', include('imageshare.urls') ),
@@ -36,9 +40,13 @@ urlpatterns = [
     path('', include('registerapp.urls') ),
     path('',include('django.contrib.auth.urls')),
 
+    re_path(r'media/(?P<path>.*)$', serve, {'document_root' : settings.MEDIA_ROOT}),
+    
+
     
     
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #  we setup 2 things in settings,  MEDIA_URl and MEDIA_ROOT,  
 # specify those here
