@@ -15,6 +15,7 @@ addd Procfile for heroku
 https://stackoverflow.com/questions/48083216/django-on-heroku-programmingerror-at-relation-does-not-exist
 
 
+
 // local sqlite db vs heroku postgresql db
 https://stackoverflow.com/questions/63408420/sqlite-database-not-connected-in-django-heroku
 
@@ -26,3 +27,9 @@ https://stackoverflow.com/questions/63408420/sqlite-database-not-connected-in-dj
 //resolving the UTF error while loaddata to postgresql
 use UTF-16
 https://www.youtube.com/watch?v=GkKHCL3Ngyk
+
+
+// current db being used 
+>>> from django.db import connection
+>>> connection.vendor
+'postgresql' or 'sqlite'

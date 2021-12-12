@@ -147,8 +147,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 MEDIA_URL='/media/'  # this is where our images will go after uplaods
+
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media') 
 #  here we need to give the full path of the media folder 
